@@ -11,7 +11,6 @@ var string =
   let finalString = string;
   for (let i = 0; i < patches.length; i++) {
     let findWord = string.slice(patches[i][0] - 1, patches[i][1]);
-    console.log(findWord);
     finalString = finalString.replace(findWord, patches[i][2]);
   }
   console.log(finalString);
