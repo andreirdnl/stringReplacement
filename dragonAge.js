@@ -8,9 +8,14 @@ var string =
     [43, 49, "Palace"],
   ];
 
-  let finalString = string;
-  for (let i = 0; i < patches.length; i++) {
-    let findWord = string.slice(patches[i][0] - 1, patches[i][1]);
-    finalString = finalString.replace(findWord, patches[i][2]);
-  }
-  console.log(finalString);
+  const searchAndReplace = (str, arr) => {
+    let finalString = str;
+    for (let i = 0; i < arr.length; i++) {
+      let findWord = str.slice(arr[i][0] - 1, arr[i][1]);
+      finalString = finalString.replace(findWord, arr[i][2]);
+    }
+    return finalString;
+  };
+
+  let res = searchAndReplace(string, patches);
+  console.log(res);
